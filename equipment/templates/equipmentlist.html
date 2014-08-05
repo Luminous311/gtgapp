@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Equipment List</h1>
+{% for class in equipmentlist %}
+{% if class.is_active = True %}
+<div>
+<h2><a href="/equipment/getclass/{{ class.id }}/">{{ class.equipment_class}}</a></h2>
+<p>{{ class.is_active }}</p>
+
+</div>
+{% endif %}
+{% endfor %}
+<br>
+<br>
+<p><b>Deprecated Equipment</b></p>
+{% for class in equipmentlist %}
+{% if class.is_active = False %}
+<div>
+<p><a href="/equipment/getclass/{{ class.id }}/">{{ class.equipment_class}}</a></p>
+</div>
+{% endif %}
+{% endfor %}
+{% endblock %}

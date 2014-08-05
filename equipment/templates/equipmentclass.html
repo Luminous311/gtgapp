@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+
+<ul>
+<li><a href="/equipment/all">Equipment</a></li>
+</ul>
+
+{% endblock %}
+
+
+{% block content %}
+
+<h1>{{ equipmentclass.equipment_class }}</h1>
+<p>{{ equipmentclass.is_active }}</p>
+
+{% endblock %}
