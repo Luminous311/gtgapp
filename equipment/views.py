@@ -1,14 +1,20 @@
 from django.shortcuts import render_to_response
 from equipment.models import *
 
-def getalltypes(somethingsomething):
-    code on whiteboard
-
-
+"""def getalltypes():
+    e = EquipmentType.objects.select_related()
+    dict = {}
+    for i in e:
+        if str(i.equipment_class) in dict:
+            dict[str(i.equipment_class)].append(str(i))
+        else:
+            dict[str(i.equipment_class)].append(str(i))
+    return dict
+"""
 
 def equipmentlist(request):
     return render_to_response('equipmentlist.html',
-                              {'equipmentlist': EquipmentClass.objects.all()}
+                              {'equipmentlist': EquipmentType.objects.all()}
                             )
 
 

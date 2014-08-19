@@ -2,6 +2,9 @@ from django.db import models
 
 # Create your models here.
 
+"""This represents equipment classes (e.g. "DSLR," "Tripod," etc.)
+"""
+
 class EquipmentClass(models.Model):
     equipment_class = models.CharField(max_length=200)
     is_active = models.BooleanField()
@@ -17,8 +20,9 @@ People create reservations for EquipmentTypes"""
 class EquipmentType(models.Model):
     equipment_class = models.ForeignKey(EquipmentClass, verbose_name='kind of equipment')
     equipment_name = models.CharField(max_length=200, verbose_name='make and model of equipment')
+    equipment_image = models.ImageField(upload_to='eq_type_images/')
+    equipment_description = models.TextField(verbose_name='description of equipment kit')
     is_active = models.BooleanField()
-
     def __unicode__(self):
         return self.equipment_name
 
